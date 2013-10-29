@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">POS Z</string>
+    <string name="action_settings">Settings</string>
+    <string name="topic">MPOS By Team Z</string>
+    <string name="title_activity_inventory">Inventory</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="inventory">Inventory</string>
+    <string name="id">ID</string>
+    <string name="productid">ProductID</string>
+    <string name="name">Name</string>
+
+</resources>
