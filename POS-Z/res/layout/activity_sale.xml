@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/Topic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sale"
+            android:textColor="#FCD71E"
+            android:textSize="23dip"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="171dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.52"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/inputId"
+                android:layout_width="fill_parent"
+                android:layout_height="20dp"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:background="#FEFCFF"
+                android:ems="10"
+                android:hint=" Product ID"
+                android:inputType="number" />
+
+            <EditText
+                android:id="@+id/inputQuantity"
+                android:layout_width="fill_parent"
+                android:layout_height="20dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="#FEFCFF"
+                android:ems="10"
+                android:hint=" Quantity"
+                android:inputType="number" >
+
+                <requestFocus />
+            </EditText>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/Addbutton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dip"
+            android:layout_weight="0.05"
+            android:background="@drawable/rounded2"
+            android:text="Add"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/LinearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="left"
+            android:layout_marginTop="13dp"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/productId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/productid"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FCD71E"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="15dp"
+                android:text="@string/name"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FCD71E"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="Qnty"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FCD71E"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="UniPrice"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FCD71E"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/seperate1"
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
+            android:background="#FCD71E" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <ListView
+                android:id="@+id/saleView"
+                android:layout_width="match_parent"
+                android:layout_height="250dp" >
+            </ListView>
+        </LinearLayout>
+
+        <View
+            android:id="@+id/seperate2"
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:background="#FCD71E" />
+
+        <LinearLayout
+            android:id="@+id/LinearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_gravity="left"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/Totaltxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total : "
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FCD71E"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/TotalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0"
+                android:layout_marginLeft="10dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FCD71E"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/seperate2"
+            android:layout_width="fill_parent"
+            android:layout_height="1dip"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:background="#FCD71E" />
+
+        <LinearLayout
+            android:id="@+id/LinearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/Backbutton"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/rounded2"
+                android:text="Back"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/CheckAllButton"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dip"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/rounded2"
+                android:text="CheckAll"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/RemoveButton"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dip"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/rounded2"
+                android:text="Remove"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/scanButton"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dip"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/rounded2"
+                android:text="Scan"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </TableLayout>
+
+</LinearLayout>

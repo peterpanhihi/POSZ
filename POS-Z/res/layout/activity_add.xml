@@ -3,125 +3,180 @@
     android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:background="#000000"
+    android:orientation="vertical"
+    android:scrollbarStyle="insideOverlay" >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp" >
 
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:text="ProductID : "
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:layout_marginLeft="15dp"
+            android:layout_weight="0.66"
+            android:text="ProductID"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#FCD71E" />
 
-        <EditText
-            android:id="@+id/inputId"
-            android:layout_width="200dp"
+        <TextView
+            android:id="@+id/txtProductId"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="fill_vertical"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
             android:layout_weight="1"
-            android:ems="10"
-            android:inputType="number" />
+            android:text="ProductId"
+            android:textStyle="bold" 
+            android:textColor="#FCD71E" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="fill_vertical" >
+        android:layout_gravity="fill_vertical"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp" >
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
             android:layout_weight="1"
-            android:text="Name : "
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:text="Name"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#FCD71E" />
 
         <EditText
             android:id="@+id/inputName"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="fill_vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginLeft="35dp"
             android:layout_weight="1"
-            android:ems="10" />
+            android:ems="10"
+            android:background="#FEFCFF"
+            android:maxLength="100" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content" 
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp">
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
             android:layout_weight="1"
-            android:text="Price : "
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:text="Price"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#FCD71E" />
 
         <EditText
             android:id="@+id/inputPrice"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="fill_vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginLeft="35dp"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:background="#FEFCFF"
+            android:maxLength="6" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content" 
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp">
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
             android:layout_weight="1"
-            android:text="Cost : "
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+            android:text="Cost"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#FCD71E" />
 
         <EditText
             android:id="@+id/inputCost"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_gravity="fill_vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
             android:layout_weight="1"
             android:ems="10"
-            android:inputType="numberDecimal" />
+            android:inputType="numberDecimal"
+            android:background="#FEFCFF"
+            android:maxLength="6" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp" >
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="Quantity"
+            android:textColor="#FCD71E" />
+
+        <EditText
+            android:id="@+id/inputQuantity"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="number"
+            android:background="#FEFCFF"
+            android:maxLength="4" >
+
+            <requestFocus />
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+         android:layout_marginTop="30dp">
 
         <Button
             android:id="@+id/Backbutton"
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Back" />
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="15dip"
+            android:background="@drawable/rounded2"
+            android:text="Back"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/Addbutton"
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add" />
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/rounded2"
+            android:text="Add" 
+            android:textStyle="bold"/>
     </LinearLayout>
 
 </LinearLayout>

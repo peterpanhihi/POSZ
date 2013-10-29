@@ -10,5 +10,8 @@
     <string name="id">ID</string>
     <string name="productid">ProductID</string>
     <string name="name">Name</string>
+    <string name="product_detail_">"Product Detail"</string>
+    <string name="product_id_">"PRODUCT ID"</string>
+    <string name="name_">"NAME"</string>
 
 </resources>

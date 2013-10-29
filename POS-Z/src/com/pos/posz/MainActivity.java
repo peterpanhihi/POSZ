@@ -1,9 +1,9 @@
 package com.pos.posz;
 
-import com.example.pos_z.R;
-import com.example.pos_z.R.id;
-import com.example.pos_z.R.layout;
-import com.example.pos_z.R.menu;
+import com.pos.posz.R;
+import com.pos.sale.Register;
+import com.pos.sale.SaleActivity;
+import com.pos.sale.Store;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -18,19 +18,23 @@ import android.widget.Button;
 public class MainActivity extends Activity {
 
 	SQLiteDatabase db;
-	private DBclass myDb;
+	private DBcontroller myDb;
 	private Button inventButton;
-
+	private Button saleButton;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		myDb = new DBclass(this);
+		myDb = new DBcontroller(this);
 		myDb.getWritableDatabase();
 
 		inventButton = (Button) findViewById(R.id.Inventory);
 		inventButton.setOnClickListener(new Inventory());
+		
+		saleButton = (Button) findViewById(R.id.Sale);
+		saleButton.setOnClickListener(new Sale());
+		
 	}
 
 	@Override
@@ -39,7 +43,26 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+	private class Sale implements OnClickListener {
 
+		@Override
+		public void onClick(View arg0) {
+			new Handler().postDelayed(new Runnable() {
+
+				@Override
+				public void run() {
+					Intent NewActivity = new Intent(MainActivity.this, SaleActivity.class);
+					startActivity(NewActivity);
+					finish();
+					
+					overridePendingTransition(R.layout.mainfadein, R.layout.mainfadeout);
+
+				}
+			}, 500);
+		}
+		
+	}
+	
 	private class Inventory implements OnClickListener {
 		@Override
 		public void onClick(View v) {

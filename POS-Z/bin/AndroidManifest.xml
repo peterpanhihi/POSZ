@@ -1,26 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.pos_z"
+    package="com.pos.posz"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="17"
-        android:targetSdkVersion="17" />
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/posz_logo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.pos.posz.MainActivity"
-            android:label="@string/app_name" >
+            android:name="com.pos.posz.LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.pos.posz.MainActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.pos.posz.InventoryActivity"
+            android:label="@string/title_activity_inventory"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.pos.sale.SaleActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.pos.posz.AddActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.pos.posz.DetailActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.pos.posz.EditActivity"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 

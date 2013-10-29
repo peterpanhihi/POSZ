@@ -1,9 +1,6 @@
 package com.pos.posz;
 
-import com.example.pos_z.R;
-
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,17 +8,27 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class AddActivity extends Activity {
-
+	/*This is the attribute for back button*/
 	private Button back;
+	/*This is the attribute for add button*/
 	private Button add;
+	/*This is the text view for the product ID*/
+	private TextView txtproductId;
+	/* */
+	private InventoryController inventcontrol;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add);
+
+		String productId = getIntent().getStringExtra("productID");
+		txtproductId = (TextView) findViewById(R.id.txtProductId);
+		txtproductId.setText(productId);
 
 		back = (Button) findViewById(R.id.Backbutton);
 		back.setOnClickListener(new Back());
@@ -29,20 +36,15 @@ public class AddActivity extends Activity {
 		add = (Button) findViewById(R.id.Addbutton);
 		add.setOnClickListener(new AddInventory());
 
+		inventcontrol = new InventoryController(this);
+
 	}
 
-	public boolean SaveData() {
-		final EditText productId = (EditText) findViewById(R.id.inputId);
+	public boolean saveData() {
 		final EditText name = (EditText) findViewById(R.id.inputName);
 		final EditText price = (EditText) findViewById(R.id.inputPrice);
 		final EditText cost = (EditText) findViewById(R.id.inputCost);
-
-		final DBclass myDb = new DBclass(this);
-
-		if (productId.getText().length() == 0) {
-			productId.requestFocus();
-			return false;
-		}
+		final EditText quantity = (EditText) findViewById(R.id.inputQuantity);
 
 		if (name.getText().length() == 0) {
 			name.requestFocus();
@@ -59,26 +61,24 @@ public class AddActivity extends Activity {
 			return false;
 		}
 
-		String[] arrData = myDb.SelectData(Integer.parseInt(productId.getText()
-				.toString()));
-		if (arrData != null) {
-			productId.requestFocus();
+		if (quantity.getText().length() == 0) {
+			quantity.requestFocus();
 			return false;
 		}
+		
+		if(price.getText().toString().equals("."))
+			return false;
+		if(cost.getText().toString().equals("."))
+			return false;
 
-		long saveStatus = myDb.insertData(Integer.parseInt(productId.getText()
-				.toString()), name.getText().toString(), Integer.parseInt(cost
-				.getText().toString()), Integer.parseInt(price.getText()
-				.toString()));
+		boolean addSuccess = inventcontrol.add(txtproductId.getText()
+				.toString(), name.getText().toString(), price.getText()
+				.toString(), cost.getText().toString(), quantity.getText()
+				.toString());
 
-		if (saveStatus == -1) {
+		if (!addSuccess)
 			return false;
-		}
-		if (saveStatus == -2) {
-			Toast.makeText(AddActivity.this, "Already Exists!!!",
-					Toast.LENGTH_SHORT).show();
-			return false;
-		}
+
 		Toast.makeText(AddActivity.this, "Add Item Successfully!!",
 				Toast.LENGTH_SHORT).show();
 
@@ -114,10 +114,13 @@ public class AddActivity extends Activity {
 
 		@Override
 		public void onClick(View v) {
-			if (SaveData()) {
+			if (saveData()) {
 				Intent newActivity = new Intent(AddActivity.this,
 						InventoryActivity.class);
 				startActivity(newActivity);
+			} else {
+				Toast.makeText(AddActivity.this, "Failed", Toast.LENGTH_SHORT)
+						.show();
 			}
 
 		}

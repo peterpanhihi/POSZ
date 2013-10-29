@@ -3,6 +3,7 @@
     android:id="@+id/LinearLayout1"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="#000000"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -10,13 +11,43 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Inventory" >
 
-    <TextView
-        android:id="@+id/Topic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:text="@string/inventory"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/Topic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/inventory"
+            android:textStyle="bold"
+            android:textColor="#FCD71E" />
+
+        <EditText
+            android:id="@+id/inputId"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="Product ID"
+            android:inputType="number"
+            android:background="#FEFCFF" >
+
+            <requestFocus />
+        </EditText>
+
+        <Button
+            android:id="@+id/Addbutton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dip"
+            android:background="@drawable/rounded2"
+            android:text="Add"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <TableLayout
         android:layout_width="fill_parent"
@@ -27,7 +58,6 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_gravity="left"
-            android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
             android:layout_weight="1" >
 
@@ -36,25 +66,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/productid"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FCD71E" />
 
             <TextView
                 android:id="@+id/Name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="30dp"
                 android:text="@string/name"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FCD71E" />
 
             <TextView
                 android:id="@+id/Price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
+                android:layout_marginLeft="30dp"
+                android:textStyle="bold"
                 android:text="Price"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#FCD71E" />
         </LinearLayout>
 
         <View
@@ -63,7 +98,8 @@
             android:layout_height="1dip"
             android:layout_marginLeft="2dp"
             android:layout_weight="1"
-            android:background="#CCCCCC" />
+            android:layout_marginTop="5dp"
+            android:background="#FCD71E"  />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -84,51 +120,61 @@
             android:layout_height="1dip"
             android:layout_marginLeft="2dp"
             android:layout_weight="1"
-            android:background="#CCCCCC" />
+            android:background="#FCD71E" />
 
         <LinearLayout
             android:id="@+id/LinearLayout2"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
+            android:layout_marginTop="5dp"
             android:layout_weight="1" >
 
             <Button
                 android:id="@+id/Backbutton"
                 style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="5dp"
-                android:text="Back" />
+                android:background="@drawable/rounded2"
+                android:text="Back"
+                android:textColor="#000000"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/CheckAllButton"
                 style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dip"
-                android:layout_marginLeft="10dip"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dip"
                 android:layout_marginTop="5dp"
-                android:text="CheckAll" />
+                android:background="@drawable/rounded2"
+                android:text="CheckAll"
+                android:textColor="#000000"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/RemoveButton"
                 style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dip"
-                android:layout_marginLeft="10dip"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dip"
                 android:layout_marginTop="5dp"
-                android:text="Remove" />
+                android:background="@drawable/rounded2"
+                android:text="Remove"
+                android:textColor="#000000"
+                android:textStyle="bold" />
 
             <Button
-                android:id="@+id/Addbutton"
+                android:id="@+id/scanButton"
                 style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-      			android:paddingLeft="10dip"
-      			android:layout_marginLeft="10dip"
+                android:layout_width="60dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dip"
                 android:layout_marginTop="5dp"
-                android:text="Add" />
+                android:background="@drawable/rounded2"
+                android:text="Scan"
+                android:textColor="#000000"
+                android:textStyle="bold" />
         </LinearLayout>
     </TableLayout>
 
